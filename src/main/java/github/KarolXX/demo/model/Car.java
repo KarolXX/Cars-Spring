@@ -59,7 +59,8 @@ public class Car {
         return brand;
     }
 
-    public void setBrand(Brand brand) {
+    //cannot set brand! (all the cars in brand have the same produtionYear, models no)
+    void setBrand(Brand brand) {
         this.brand = brand;
     }
 }

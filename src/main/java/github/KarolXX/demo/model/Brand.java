@@ -18,7 +18,7 @@ public class Brand {
     private String name;
     private LocalDateTime productionBrandYear;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "brand")
     private Set<Car> cars;
 
     public int getId() {
