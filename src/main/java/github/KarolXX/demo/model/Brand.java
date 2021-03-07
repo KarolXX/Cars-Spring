@@ -21,6 +21,13 @@ public class Brand {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "brand")
     private Set<Car> cars;
 
+    @ManyToOne
+    @JoinColumn(name = "factory_id")
+    private Factory factory;
+
+    public Brand() {
+    }
+
     public int getId() {
         return id;
     }
@@ -33,7 +40,7 @@ public class Brand {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -49,7 +56,15 @@ public class Brand {
         return cars;
     }
 
-    void setCars(Set<Car> cars) {
+    public void setCars(Set<Car> cars) {
         this.cars = cars;
+    }
+
+    public Factory getFactory() {
+        return factory;
+    }
+
+    public void setFactory(Factory factory) {
+        this.factory = factory;
     }
 }

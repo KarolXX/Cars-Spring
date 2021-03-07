@@ -23,6 +23,14 @@ public class Car {
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
+    public Car() {
+    }
+
+    public Car(@NotBlank(message = "car name`s must be not empty") String name, LocalDateTime productionYear) {
+        this.name = name;
+        this.productionYear = productionYear;
+    }
+
     public int getId() {
         return id;
     }
@@ -35,7 +43,7 @@ public class Car {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -43,7 +51,7 @@ public class Car {
         return productionYear;
     }
 
-    void setProductionYear(LocalDateTime productionYear) {
+    public void setProductionYear(LocalDateTime productionYear) {
         this.productionYear = productionYear;
     }
 
@@ -59,7 +67,7 @@ public class Car {
         return brand;
     }
 
-    //cannot set brand! (all the cars in brand have the same produtionYear, models no)
+    //(maybe be wrong) - cannot set brand! (all the cars in brand have the same produtionYear, models no)
     void setBrand(Brand brand) {
         this.brand = brand;
     }

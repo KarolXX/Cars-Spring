@@ -18,8 +18,13 @@ public class Factory {
     private String name;
     private LocalDateTime establishmentYear;
 
-    @OneToMany(mappedBy = "factory")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "factory")
     private Set<FactoryCar> cars;
+    @OneToMany(mappedBy = "factory")
+    private Set<Brand> brands;
+
+    Factory() {
+    }
 
     public int getId() {
         return id;

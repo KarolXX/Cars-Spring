@@ -21,6 +21,10 @@ public class FactoryCar {
     @JoinColumn(name = "factory_id")
     private Factory factory;
 
+//    FactoryCar() {
+//
+//    }
+
     public int getId() {
         return id;
     }
